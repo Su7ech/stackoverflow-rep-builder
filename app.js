@@ -50,18 +50,15 @@ var showQuestion = function(question) {
 var showTopAnswerer = function(answerer) {
 	var result = $('.templates .answerer').clone();
 
-	var userName = result.find('.display-name a');
-	userName.attr('href', answerer.user.link)
-	userName.text(answerer.user.display_name);
-
-	// var acceptRate = result.find('.accept-rate');
-	// acceptRate.text(answerer.user.accept_rate);
-
-	var postCount = result.find('.post-count');
-	postCount.text(answerer.post_count);
-
-	var reputation = result.find('.reputation');
-	reputation.text(answerer.user.reputation);
+	var user = result.find('.display-user');
+	user.html('<p>Name: <a target="_blank" href=' + answerer.user.link + '>' 
+							+ answerer.user.display_name + 
+						'</a>' + 
+				'<p>' +
+				'<p>Reputation: ' + answerer.user.reputation + '</p>' +
+				'<p>Post Count: ' + answerer.post_count + '</p>' +
+				'<p>Score: ' + answerer.score + '</p>'
+	);
 
 	return result;
 };

@@ -10,7 +10,7 @@ $(document).ready( function() {
 		$('.results').html('');
 		var tags = $(this).find("input[name='answerers']").val();
 		getTopAnswerers(tags);
-	})
+	});
 });
 
 // this function takes the question object returned by StackOverflow 
